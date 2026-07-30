@@ -1,6 +1,6 @@
 # Buscador de Clima 🌤️
 
-Aplicação que exibe o clima atual de qualquer cidade, com temperatura, sensação térmica, umidade e vento.
+Aplicação que exibe o clima atual de qualquer cidade do Brasil, com temperatura, sensação térmica, umidade e vento.
 
 ## Tecnologias
 
@@ -9,13 +9,16 @@ Aplicação que exibe o clima atual de qualquer cidade, com temperatura, sensaç
 - Tailwind CSS
 - Vite
 - OpenWeatherMap API
+- IBGE API (estados e municípios)
 
 ## Funcionalidades
 
-- Busca por nome de cidade
+- Seleção de estado via API do IBGE (27 estados)
+- Seleção de cidade com todos os municípios do estado selecionado
+- Dropdowns customizados (sem select nativo)
 - Exibe temperatura atual, sensação térmica, umidade e velocidade do vento
 - Tratamento de erros (cidade não encontrada, chave inválida)
-- Loading state durante a requisição
+- Loading state durante as requisições
 
 ## Como rodar localmente
 
@@ -38,7 +41,7 @@ npm run dev
 ```
 src/
 ├── components/
-│   ├── SearchBar.tsx      # Input + botão de busca
+│   ├── CitySelector.tsx   # Dropdowns de estado e cidade (IBGE API)
 │   ├── WeatherCard.tsx    # Card com dados do clima
 │   └── ErrorMessage.tsx   # Exibição de erros
 ├── hooks/
@@ -50,6 +53,6 @@ src/
 
 ## Deploy
 
-[Ver projeto ao vivo](#) ← adicionar após deploy na Vercel
+[Ver projeto ao vivo](https://buscador-clima-orcin.vercel.app/)
 
 > ⚠️ Na Vercel, adicione `VITE_OPENWEATHER_API_KEY` em **Settings → Environment Variables**.
